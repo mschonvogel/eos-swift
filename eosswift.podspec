@@ -8,12 +8,12 @@ Pod::Spec.new do |spec|
   spec.authors                = { 'Samuel Kirton' => 'sam@memtrip.com' }
   spec.summary                = 'EOS libraries for swift, designed primarily for iOS development.'
   spec.source                 = { :git => 'https://github.com/memtrip/eos-swift.git', :tag => 'v1.6.0' }
-  spec.source_files           = 'eosswift/**/*.{swift,h,c}'
+  spec.source_files           = 'eosswift/*.{swift,h,c}', 'eosswift/{microecc,eos-core}/**/*.{swift,h,c}'
   spec.pod_target_xcconfig    = {'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/eosswift/eosswift/microecc/**', 'LIBRARY_SEARCH_PATHS' => '$(SRCROOT)/eosswift/eosswift/'}
   spec.preserve_paths         = 'eosswift/microecc/module.modulemap'
   spec.public_header_files    = 'eosswift/*.h'
   spec.requires_arc           = true
-  spec.dependency               'RxSwift','~> 4.0'
-  spec.dependency               'RxCocoa', '~> 4.0'
+#  spec.dependency               'RxSwift','~> 4.0'
+#  spec.dependency               'RxCocoa', '~> 4.0'
   spec.dependency               'BigInt', '~> 3.1.0'
 end
